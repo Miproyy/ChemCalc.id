@@ -461,21 +461,28 @@ def about_page():
     """Fungsi untuk merender halaman 'Informasi Kimia'."""
     st.title("📖 Informasi Dasar Kimia")
     st.markdown("""
-    Kimia adalah studi tentang materi, sifat-sifatnya, bagaimana dan mengapa zat bergabung atau terpisah untuk membentuk zat lain, dan bagaimana zat berinteraksi dengan energi.
+    Kimia adalah cabang ilmu sains yang mempelajari tentang *materi, **komposisi, **struktur, **sifat, dan **perubahan yang terjadi pada zat*. Kimia menjelaskan bagaimana atom dan molekul berinteraksi satu sama lain, baik dalam proses alami maupun buatan manusia. Hampir semua yang ada di sekitar kita—makanan, air, obat-obatan, bahan bangunan, bahkan udara yang kita hirup—melibatkan reaksi kimia.
+
+    Ilmu kimia tidak hanya penting dalam dunia laboratorium, tetapi juga sangat berperan dalam bidang *farmasi, pertanian, kesehatan, lingkungan, teknologi, dan industri*. Dengan memahami dasar-dasar kimia, kita dapat membuat keputusan yang lebih baik terkait produk yang kita gunakan dan proses yang kita temui dalam kehidupan sehari-hari.
 
     ### Konsep Kunci
-    - **Atom**: Unit dasar materi yang terdiri dari inti pusat (proton dan neutron) yang dikelilingi oleh awan elektron. Setiap unsur kimia dicirikan oleh jumlah proton di dalam atomnya.
-    - **Unsur**: Zat murni yang hanya terdiri dari atom-atom yang semuanya memiliki jumlah proton yang sama di dalam inti atomnya. Unsur-unsur diatur dalam Tabel Periodik.
-    - **Molekul**: Partikel yang terdiri dari dua atau lebih atom yang terikat secara kimia. Molekul bisa terdiri dari atom unsur yang sama (seperti O₂) atau atom dari unsur yang berbeda (seperti H₂O).
-    - **Senyawa**: Zat yang terbentuk ketika dua atau lebih unsur kimia yang berbeda terikat secara kimia dalam perbandingan tetap. Contohnya adalah air (H₂O) dan garam dapur (NaCl).
-    - **Massa Molar**: Massa dari satu mol suatu zat. Ini adalah properti fisik yang penting dalam stoikiometri dan perhitungan kimia lainnya. Satuannya biasanya gram per mol (g/mol).
+    - *Atom*: Unit dasar materi yang terdiri dari proton, neutron, dan elektron.
+    - *Unsur*: Zat murni yang terdiri dari satu jenis atom, disusun dalam tabel periodik.
+    - *Molekul*: Gabungan dua atau lebih atom yang terikat secara kimia.
+    - *Senyawa*: Zat yang tersusun dari dua atau lebih unsur dalam perbandingan tertentu.
+    - *Massa Molar*: Jumlah massa dalam gram dari satu mol zat (g/mol).
+    - *Rumus Empiris*: Rumus paling sederhana dari suatu senyawa berdasarkan perbandingan mol antar unsur.
+    - *Konsentrasi Larutan (Molaritas)*: Ukuran konsentrasi larutan dalam mol zat terlarut per liter larutan (mol/L).
 
     ### Tentang Aplikasi Ini
-    Aplikasi ini dibuat untuk menyediakan alat yang mudah diakses untuk:
-    1.  **Mempelajari Unsur**: Dengan tabel periodik yang interaktif.
-    2.  **Melakukan Perhitungan**: Dengan kalkulator massa molar yang praktis.
-    
-    Semoga dapat membantu perjalanan belajar kimia Anda!
+    Aplikasi ini dirancang sebagai alat bantu belajar dan praktikum digital untuk memudahkan pengguna memahami dan menghitung konsep-konsep dasar dalam kimia. Fitur-fitur utama yang tersedia antara lain:
+    1.  *Tabel Periodik Interaktif*: Menyediakan informasi lengkap tiap unsur (nama, nomor atom, massa atom, golongan, dll).
+    2.  *Kalkulator Kimia*:
+        - *Massa Molar*: Menghitung massa molar senyawa dari rumus kimianya.
+        - *Rumus Empiris*: Menentukan rumus empiris dari data massa unsur.
+        - *Konsentrasi Larutan (Molaritas)*: Menghitung mol dan konsentrasi berdasarkan massa dan volume.
+
+    Diharapkan aplikasi ini dapat menjadi sarana belajar yang menyenangkan, praktis, dan informatif, baik untuk pelajar, guru, maupun siapa saja yang tertarik dengan ilmu kimia.
     """)
 
 # =================================================================================
