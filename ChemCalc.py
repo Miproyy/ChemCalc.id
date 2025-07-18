@@ -378,7 +378,6 @@ def landing_page():
 
     - **Tabel Periodik**: Jelajahi tabel periodik interaktif, klik pada unsur untuk melihat detailnya.
     - **Kalkulator Kimia**: Hitung massa molar senyawa dengan cepat.
-    - **Rumus Empiris** : Hitung empiris dari suatu senyawa.
     - **Informasi Kimia**: Baca pengantar singkat tentang konsep-konsep dasar kimia.
 
     Selamat belajar dan bereksplorasi!
@@ -421,79 +420,6 @@ def calculator_page():
                 st.error(f"Terjadi kesalahan tak terduga: {e}")
         else:
             st.warning("Silakan masukkan rumus kimia terlebih dahulu.")
-            st.set_page_config(page_title="Kalkulator Rumus Empiris", layout="centered")
-            
-def empiris_page():
-    """Fungsi untuk merender halaman Rumus Empiris."""
-    st.title("🔬 Kalkulator Rumus Empiris")
-    st.write("Masukkan massa unsur-unsur (dalam gram), kalkulator ini akan menghitung rumus empirisnya.")
-
-    # Input massa dari tiga unsur
-    col1, col2 = st.columns(2)
-    with col1:
-        unsur1 = st.text_input("Nama unsur pertama (misal: C)", "C")
-        massa1 = st.number_input(f"Massa {unsur1} (gram)", min_value=0.0, step=0.1)
-    with col2:
-        massa_atom1 = st.number_input(f"Massa atom relatif {unsur1}", value=12.01)
-
-    col1, col2 = st.columns(2)
-    with col1:
-        unsur2 = st.text_input("Nama unsur kedua (misal: H)", "H")
-        massa2 = st.number_input(f"Massa {unsur2} (gram)", min_value=0.0, step=0.1)
-    with col2:
-        massa_atom2 = st.number_input(f"Massa atom relatif {unsur2}", value=1.008)
-    
-    col1, col2 = st.columns(2)
-    with col1:
-        unsur3 = st.text_input("Nama unsur ketiga (opsional, misal: O)", "O")
-        massa3 = st.number_input(f"Massa {unsur3} (gram)", min_value=0.0, step=0.1)
-    with col2:
-        massa_atom3 = st.number_input(f"Massa atom relatif {unsur3}", value=16.00)
-
-    def hitung_rumus_empiris(massa_list, atom_list):
-        mol = [m/a if a != 0 else 0 for m, a in zip(massa_list, atom_list)]
-        mol_min = min([x for x in mol if x > 0])
-        rasio = [round(m / mol_min + 1e-2) for m in mol]  # toleransi pembulatan
-        return rasio
-
-    if st.button("Hitung Rumus Empiris"):
-        massa_list = [massa1, massa2, massa3]
-        atom_list = [massa_atom1, massa_atom2, massa_atom3]
-        unsur_list = [unsur1, unsur2, unsur3]
-
-        if sum(massa_list) == 0:
-            st.warning("Masukkan minimal dua unsur dengan massa lebih dari 0.")
-        else:
-            rasio = hitung_rumus_empiris(massa_list, atom_list)
-            
-            # Format rumus empiris
-            rumus = ""
-            for u, r in zip(unsur_list, rasio):
-                if r > 0:
-                    subscript = str(r) if r != 1 else ""
-                    rumus += f"{u}<sub>{subscript}</sub>"
-            
-            st.markdown(f"### Rumus Empiris: {rumus}", unsafe_allow_html=True)
-            
-            # Tampilkan langkah perhitungan
-            with st.expander("Lihat Langkah Perhitungan"):
-                st.write("1. Hitung mol masing-masing unsur:")
-                for m, ar, u in zip(massa_list, atom_list, unsur_list):
-                    if m > 0:
-                        st.write(f"   - {u}: {m} g / {ar} g/mol = {m/ar:.4f} mol")
-                
-                st.write("2. Bagi setiap jumlah mol dengan nilai mol terkecil:")
-                mol_values = [m/a if a !=0 else 0 for m,a in zip(massa_list, atom_list)]
-                mol_min = min([x for x in mol_values if x > 0])
-                for u, m in zip(unsur_list, mol_values):
-                    if m > 0:
-                        st.write(f"   - {u}: {m:.4f} / {mol_min:.4f} = {m/mol_min:.4f}")
-                
-                st.write("3. Bulatkan ke bilangan bulat terdekat:")
-                for u, r in zip(unsur_list, rasio):
-                    if r > 0:
-                        st.write(f"   - {u}: ≈ {r}")
-
 
 def about_page():
     """Fungsi untuk merender halaman 'Informasi Kimia'."""
@@ -526,7 +452,7 @@ def main():
     # Navigasi di Sidebar
     st.sidebar.title("Navigasi")
     
-    pages = ["Beranda", "Tabel Periodik", "Kalkulator Kimia","Rumus Empiris","Informasi Kimia"]
+    pages = ["Beranda", "Tabel Periodik", "Kalkulator Kimia", "Informasi Kimia"]
     
     if 'page' not in st.query_params or st.query_params.page not in pages:
         st.query_params.page = "Beranda"
@@ -554,8 +480,6 @@ def main():
         periodic_table_page()
     elif page == "Kalkulator Kimia":
         calculator_page()
-    elif page == "Rumus Empiris":
-        empiris_page():
     elif page == "Informasi Kimia":
         about_page()
 
