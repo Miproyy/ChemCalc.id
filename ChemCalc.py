@@ -421,38 +421,6 @@ def calculator_page():
         else:
             st.warning("Silakan masukkan rumus kimia terlebih dahulu.")
 
-import streamlit as st
-
-# Fungsi untuk menghitung rumus empiris
-def rumus_empiris(massa_barang):
-    # Asumsi massa_barang adalah list dari massa unsur
-    total = sum(massa_barang)
-    rasio = [massa / total for massa in massa_barang]
-    return rasio
-
-# Struktur halaman
-st.sidebar.title("Navigasi")
-page = st.sidebar.radio("Pilih Halaman", ["Beranda", "Tabel Periodik", "Kalkulator Kimia", "Informasi Kimia"])
-
-if page == "Beranda":
-    st.title("Selamat Datang di Aplikasi Kimia Interaktif")
-    st.write("Aplikasi ini adalah pusat sumber daya Anda untuk menjelajahi dunia kimia yang menakjubkan.")
-
-elif page == "Kalkulator Kimia":
-    st.title("Kalkulator Kimia")
-    st.write("Hitung massa molar senyawa dengan cepat.")
-    
-    # Input untuk massa unsur
-    massa_barang = st.multiselect("Pilih massa unsur (g)", [1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
-    
-    if st.button("Hitung Rumus Empiris"):
-        if massa_barang:
-            rasio = rumus_empiris(massa_barang)
-            st.write("Rasio unsur dalam rumus empiris adalah:", rasio)
-        else:
-            st.write("Silakan pilih massa unsur.")
-
-
 def about_page():
     """Fungsi untuk merender halaman 'Informasi Kimia'."""
     st.title("📖 Informasi Dasar Kimia")
