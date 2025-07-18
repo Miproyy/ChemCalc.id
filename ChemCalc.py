@@ -377,7 +377,7 @@ def landing_page():
     **Gunakan navigasi di sebelah kiri untuk memulai:**
 
     - **Tabel Periodik**: Jelajahi tabel periodik interaktif, klik pada unsur untuk melihat detailnya.
-    - **Kalkulator Kimia**: Hitung massa molar senyawa, rumus empiris dan hukum avogadro dengan cepat.
+    - **Kalkulator Kimia**: Hitung massa molar senyawa, rumus empiris dan konsentrasi larutan(Molaritas) dengan cepat.
     - **Informasi Kimia**: Baca pengantar singkat tentang konsep-konsep dasar kimia.
 
     Selamat belajar dan bereksplorasi!
@@ -400,7 +400,7 @@ def calculator_page():
     """Fungsi untuk merender halaman Kalkulator Kimia."""
     st.title("🧮 Kalkulator Kimia Interaktif")
 
-    tab1, tab2, tab3 = st.tabs(["Massa Molar", "Rumus Empiris", "Konversi Mol <-> Partikel"])
+    tab1, tab2, tab3 = st.tabs(["Massa Molar", "Rumus Empiris", "Konsentrasi Larutan(Molaritas)"])
 
     with tab1:
         st.subheader("🔬 Kalkulator Massa Molar")
