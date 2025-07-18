@@ -518,6 +518,15 @@ def main():
         calculator_page()
     elif page == "Informasi Kimia":
         about_page()
-
+# Watermark/footer di bagian bawah aplikasi
+    st.markdown(
+        """
+        <hr style="border-top: 1px solid #bbb;">
+        <div style="text-align: center; color: white; background-color: #000; padding: 10px; font-weight: bold;">
+            © 2025 POLITEKNIK AKA BOGOR - D3 Analisis Kimia.
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
 if __name__ == "__main__":
     main()
