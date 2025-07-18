@@ -398,28 +398,61 @@ def periodic_table_page():
 
 def calculator_page():
     """Fungsi untuk merender halaman Kalkulator Kimia."""
-    st.title("🧮 Kalkulator Massa Molar")
-    st.markdown("Masukkan rumus kimia dari sebuah senyawa untuk menghitung massa molarnya.")
-    
-    formula = st.text_input(
-        "Masukkan Rumus Kimia (contoh: H2O, C6H12O6, Mg(OH)2)",
-        key="formula_input"
-    )
-    if st.button("Hitung Massa Molar"):
-        if formula:
+    st.title("🧮 Kalkulator Kimia Interaktif")
+
+    tab1, tab2, tab3 = st.tabs(["Massa Molar", "Rumus Empiris", "Konversi Mol <-> Partikel"])
+
+    with tab1:
+        st.subheader("🔬 Kalkulator Massa Molar")
+        formula = st.text_input("Masukkan Rumus Kimia (contoh: H2O, C6H12O6)", key="molar_input")
+        if st.button("Hitung Massa Molar"):
             try:
                 atom_counts = parse_formula(formula)
                 total_mass = calculate_molar_mass(atom_counts)
-                
-                st.success(f"**Massa Molar dari {formula} adalah:** `{total_mass:.4f} g/mol`")
+                st.success(f"Massa molar dari {formula} adalah *{total_mass:.4f} g/mol*")
                 display_calculation_breakdown(formula, atom_counts, total_mass)
-
-            except ValueError as e:
-                st.error(f"Error: {e}. Periksa kembali rumus Anda.")
             except Exception as e:
-                st.error(f"Terjadi kesalahan tak terduga: {e}")
+                st.error(f"Terjadi kesalahan: {e}")
+
+    with tab2:
+        st.subheader("🧪 Hitung Rumus Empiris")
+        st.markdown("Masukkan unsur dan massa masing-masing (misal: C = 12, H = 2, O = 16)")
+        elements_input = st.text_area("Data Massa Unsur (Format: C=12, H=2, O=16)", key="empirical_input")
+
+        if st.button("Hitung Rumus Empiris"):
+            try:
+                pairs = elements_input.split(",")
+                data = {}
+                for p in pairs:
+                    el, mass = p.strip().split("=")
+                    el, mass = el.strip(), float(mass.strip())
+                    if el not in ELEMENTS_DATA:
+                        raise ValueError(f"Unsur tidak dikenal: {el}")
+                    data[el] = mass / ELEMENTS_DATA[el]['mass']  # mol
+
+                min_mol = min(data.values())
+                ratio = {k: round(v / min_mol + 1e-2) for k, v in data.items()}  # bulatkan mendekati bilangan bulat
+
+                st.success(f"Rumus empiris adalah: *{''.join(f'{k}{v if v > 1 else ""}' for k,v in ratio.items())}*")
+
+            except Exception as e:
+                st.error(f"Kesalahan input: {e}")
+
+    with tab3:
+        st.subheader("🔁 Konversi Mol dan Partikel (Avogadro)")
+        avogadro = 6.022e23
+        conversion_type = st.radio("Pilih Konversi", ["Mol → Partikel", "Partikel → Mol"], horizontal=True)
+
+        if conversion_type == "Mol → Partikel":
+            mol = st.number_input("Masukkan jumlah mol:", min_value=0.0, format="%.4f", key="mol_input")
+            if st.button("Konversi ke Partikel"):
+                hasil = mol * avogadro
+                st.success(f"{mol} mol = *{hasil:.3e} partikel*")
         else:
-            st.warning("Silakan masukkan rumus kimia terlebih dahulu.")
+            partikel = st.number_input("Masukkan jumlah partikel:", min_value=0.0, format="%.4e", key="partikel_input")
+            if st.button("Konversi ke Mol"):
+                hasil = partikel / avogadro
+                st.success(f"{partikel:.3e} partikel = *{hasil:.4f} mol*")
 
 def about_page():
     """Fungsi untuk merender halaman 'Informasi Kimia'."""
