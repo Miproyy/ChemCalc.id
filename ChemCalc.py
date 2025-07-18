@@ -377,7 +377,7 @@ def landing_page():
     **Gunakan navigasi di sebelah kiri untuk memulai:**
 
     - **Tabel Periodik**: Jelajahi tabel periodik interaktif, klik pada unsur untuk melihat detailnya.
-    - **Kalkulator Kimia**: Hitung massa molar senyawa,rumus empiris dan hukum avogadro dengan cepat.
+    - **Kalkulator Kimia**: Hitung massa molar senyawa, rumus empiris dan hukum avogadro dengan cepat.
     - **Informasi Kimia**: Baca pengantar singkat tentang konsep-konsep dasar kimia.
 
     Selamat belajar dan bereksplorasi!
