@@ -461,26 +461,26 @@ def about_page():
     """Fungsi untuk merender halaman 'Informasi Kimia'."""
     st.title("📖 Informasi Dasar Kimia")
     st.markdown("""
-    Kimia adalah cabang ilmu sains yang mempelajari tentang *materi, **komposisi, **struktur, **sifat, dan **perubahan yang terjadi pada zat*. Kimia menjelaskan bagaimana atom dan molekul berinteraksi satu sama lain, baik dalam proses alami maupun buatan manusia. Hampir semua yang ada di sekitar kita—makanan, air, obat-obatan, bahan bangunan, bahkan udara yang kita hirup—melibatkan reaksi kimia.
+    Kimia adalah cabang ilmu sains yang mempelajari tentang materi, komposisi, struktur, sifat, dan perubahan yang terjadi pada zat. Kimia menjelaskan bagaimana atom dan molekul berinteraksi satu sama lain, baik dalam proses alami maupun buatan manusia. Hampir semua yang ada di sekitar kita seperti makanan, air, obat-obatan, bahan bangunan, bahkan udara yang kita hirup melibatkan reaksi kimia.
 
-    Ilmu kimia tidak hanya penting dalam dunia laboratorium, tetapi juga sangat berperan dalam bidang *farmasi, pertanian, kesehatan, lingkungan, teknologi, dan industri*. Dengan memahami dasar-dasar kimia, kita dapat membuat keputusan yang lebih baik terkait produk yang kita gunakan dan proses yang kita temui dalam kehidupan sehari-hari.
+    Ilmu kimia tidak hanya penting dalam dunia laboratorium, tetapi juga sangat berperan dalam bidang farmasi, pertanian, kesehatan, lingkungan, teknologi, dan industri. Dengan memahami dasar-dasar kimia, kita dapat membuat keputusan yang lebih baik terkait produk yang kita gunakan dan proses yang kita temui dalam kehidupan sehari-hari.
 
     ### Konsep Kunci
-    - *Atom*: Unit dasar materi yang terdiri dari proton, neutron, dan elektron.
-    - *Unsur*: Zat murni yang terdiri dari satu jenis atom, disusun dalam tabel periodik.
-    - *Molekul*: Gabungan dua atau lebih atom yang terikat secara kimia.
-    - *Senyawa*: Zat yang tersusun dari dua atau lebih unsur dalam perbandingan tertentu.
-    - *Massa Molar*: Jumlah massa dalam gram dari satu mol zat (g/mol).
-    - *Rumus Empiris*: Rumus paling sederhana dari suatu senyawa berdasarkan perbandingan mol antar unsur.
-    - *Konsentrasi Larutan (Molaritas)*: Ukuran konsentrasi larutan dalam mol zat terlarut per liter larutan (mol/L).
+    - Atom: Unit dasar materi yang terdiri dari proton, neutron, dan elektron.
+    - Unsur: Zat murni yang terdiri dari satu jenis atom, disusun dalam tabel periodik.
+    - Molekul: Gabungan dua atau lebih atom yang terikat secara kimia.
+    - Senyawa: Zat yang tersusun dari dua atau lebih unsur dalam perbandingan tertentu.
+    - Massa Molar: Jumlah massa dalam gram dari satu mol zat (g/mol).
+    - Rumus Empiris: Rumus paling sederhana dari suatu senyawa berdasarkan perbandingan mol antar unsur.
+    - Konsentrasi Larutan (Molaritas): Ukuran konsentrasi larutan dalam mol zat terlarut per liter larutan (mol/L).
 
     ### Tentang Aplikasi Ini
     Aplikasi ini dirancang sebagai alat bantu belajar dan praktikum digital untuk memudahkan pengguna memahami dan menghitung konsep-konsep dasar dalam kimia. Fitur-fitur utama yang tersedia antara lain:
-    1.  *Tabel Periodik Interaktif*: Menyediakan informasi lengkap tiap unsur (nama, nomor atom, massa atom, golongan, dll).
-    2.  *Kalkulator Kimia*:
-        - *Massa Molar*: Menghitung massa molar senyawa dari rumus kimianya.
-        - *Rumus Empiris*: Menentukan rumus empiris dari data massa unsur.
-        - *Konsentrasi Larutan (Molaritas)*: Menghitung mol dan konsentrasi berdasarkan massa dan volume.
+    1.  Tabel Periodik Interaktif: Menyediakan informasi lengkap tiap unsur (nama, nomor atom, massa atom, golongan, dll).
+    2.  Kalkulator Kimia:
+        - Massa Molar: Menghitung massa molar senyawa dari rumus kimianya.
+        - Rumus Empiris: Menentukan rumus empiris dari data massa unsur.
+        - Konsentrasi Larutan (Molaritas): Menghitung mol dan konsentrasi berdasarkan massa dan volume.
 
     Diharapkan aplikasi ini dapat menjadi sarana belajar yang menyenangkan, praktis, dan informatif, baik untuk pelajar, guru, maupun siapa saja yang tertarik dengan ilmu kimia.
     """)
