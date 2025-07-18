@@ -421,6 +421,47 @@ def calculator_page():
         else:
             st.warning("Silakan masukkan rumus kimia terlebih dahulu.")
 
+st.set_page_config(page_title="Kalkulator Rumus Empiris", layout="centered")
+
+st.title("🔬 Kalkulator Rumus Empiris")
+st.write("Masukkan massa unsur-unsur (dalam gram), kalkulator ini akan menghitung rumus empirisnya.")
+
+# Input massa dari tiga unsur
+unsur1 = st.text_input("Nama unsur pertama (misal: C)", "C")
+massa1 = st.number_input(f"Massa {unsur1} (gram)", min_value=0.0, step=0.1)
+massa_atom1 = st.number_input(f"Massa atom relatif {unsur1}", value=12.01)
+
+unsur2 = st.text_input("Nama unsur kedua (misal: H)", "H")
+massa2 = st.number_input(f"Massa {unsur2} (gram)", min_value=0.0, step=0.1)
+massa_atom2 = st.number_input(f"Massa atom relatif {unsur2}", value=1.008)
+
+unsur3 = st.text_input("Nama unsur ketiga (opsional, misal: O)", "O")
+massa3 = st.number_input(f"Massa {unsur3} (gram)", min_value=0.0, step=0.1)
+massa_atom3 = st.number_input(f"Massa atom relatif {unsur3}", value=16.00)
+
+def hitung_rumus_empat(massa_list, atom_list):
+    mol = [m/a if a != 0 else 0 for m, a in zip(massa_list, atom_list)]
+    mol_min = min([x for x in mol if x > 0])
+    rasio = [round(m / mol_min + 1e-2) for m in mol]  # tambahkan toleransi pembulatan
+    return rasio
+
+if st.button("Hitung Rumus Empiris"):
+    massa_list = [massa1, massa2, massa3]
+    atom_list = [massa_atom1, massa_atom2, massa_atom3]
+    unsur_list = [unsur1, unsur2, unsur3]
+
+    if sum(massa_list) == 0:
+        st.warning("Masukkan minimal dua unsur dengan massa lebih dari 0.")
+    else:
+        rasio = hitung_rumus_empat(massa_list, atom_list)
+        rumus = ""
+        for u, r in zip(unsur_list, rasio):
+            if r > 0:
+                rumus += f"{u}{'' if r == 1 else r}"
+
+        st.success(f"Rumus empiris: {rumus}")
+
+
 def about_page():
     """Fungsi untuk merender halaman 'Informasi Kimia'."""
     st.title("📖 Informasi Dasar Kimia")
@@ -452,7 +493,7 @@ def main():
     # Navigasi di Sidebar
     st.sidebar.title("Navigasi")
     
-    pages = ["Beranda", "Tabel Periodik", "Kalkulator Kimia", "Informasi Kimia","Rumus"]
+    pages = ["Beranda", "Tabel Periodik", "Kalkulator Kimia","Rumus Empiris","Informasi Kimia"]
     
     if 'page' not in st.query_params or st.query_params.page not in pages:
         st.query_params.page = "Beranda"
