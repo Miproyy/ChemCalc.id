@@ -452,7 +452,7 @@ def main():
     # Navigasi di Sidebar
     st.sidebar.title("Navigasi")
     
-    pages = ["Beranda", "Tabel Periodik", "Kalkulator Kimia", "Informasi Kimia"]
+    pages = ["Beranda", "Tabel Periodik", "Kalkulator Kimia", "Informasi Kimia","Rumus"]
     
     if 'page' not in st.query_params or st.query_params.page not in pages:
         st.query_params.page = "Beranda"
