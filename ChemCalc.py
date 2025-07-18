@@ -439,21 +439,24 @@ def calculator_page():
                 st.error(f"Kesalahan input: {e}")
 
     with tab3:
-        st.subheader("🔁 Konversi Mol dan Partikel (Avogadro)")
-        avogadro = 6.022e23
-        conversion_type = st.radio("Pilih Konversi", ["Mol → Partikel", "Partikel → Mol"], horizontal=True)
+        st.subheader("🥼 Kalkulator Konsentrasi Larutan (Molaritas)")
+        massa = st.number_input("Masukkan massa zat (gram):", min_value=0.0, format="%.4f", key="massa_zat")
+        formula_konsentrasi = st.text_input("Masukkan rumus kimia zat (misal: NaCl, H2SO4)", key="rumus_zat")
+        volume = st.number_input("Masukkan volume larutan (liter):", min_value=0.0001, format="%.4f", key="volume_larutan")
 
-        if conversion_type == "Mol → Partikel":
-            mol = st.number_input("Masukkan jumlah mol:", min_value=0.0, format="%.4f", key="mol_input")
-            if st.button("Konversi ke Partikel"):
-                hasil = mol * avogadro
-                st.success(f"{mol} mol = *{hasil:.3e} partikel*")
-        else:
-            partikel = st.number_input("Masukkan jumlah partikel:", min_value=0.0, format="%.4e", key="partikel_input")
-            if st.button("Konversi ke Mol"):
-                hasil = partikel / avogadro
-                st.success(f"{partikel:.3e} partikel = *{hasil:.4f} mol*")
+        if st.button("Hitung Konsentrasi"):
+            try:
+                atom_counts = parse_formula(formula_konsentrasi)
+                molar_mass = calculate_molar_mass(atom_counts)
+                mol = massa / molar_mass
+                konsentrasi = mol / volume
 
+                st.success(f"Konsentrasi larutan adalah *{konsentrasi:.4f} mol/L*")
+                st.markdown(f"Jumlah mol: {mol:.4f} mol")
+                st.markdown(f"Massa molar dari {formula_konsentrasi}: {molar_mass:.4f} g/mol")
+            except Exception as e:
+                st.error(f"Kesalahan: {e}")
+                
 def about_page():
     """Fungsi untuk merender halaman 'Informasi Kimia'."""
     st.title("📖 Informasi Dasar Kimia")
