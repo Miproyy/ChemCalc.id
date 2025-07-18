@@ -523,6 +523,8 @@ def main():
         periodic_table_page()
     elif page == "Kalkulator Kimia":
         calculator_page()
+    elif page == "Rumus Empiris":
+        empiris_page():
     elif page == "Informasi Kimia":
         about_page()
 
