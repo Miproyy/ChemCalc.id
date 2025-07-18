@@ -518,15 +518,30 @@ def main():
         calculator_page()
     elif page == "Informasi Kimia":
         about_page()
-# Watermark/footer di bagian bawah aplikasi
+
+# Watermark sticky di bagian bawah layar
     st.markdown(
         """
-        <hr style="border-top: 1px solid #bbb;">
-        <div style="text-align: center; color: white; background-color: #000; padding: 10px; font-weight: bold;">
+        <style>
+        .watermark-fixed {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #000;
+            color: white;
+            text-align: center;
+            padding: 8px 0;
+            font-weight: bold;
+            z-index: 100;
+        }
+        </style>
+        <div class="watermark-fixed">
             © 2025 POLITEKNIK AKA BOGOR - D3 Analisis Kimia.
         </div>
         """,
         unsafe_allow_html=True
     )
+    
 if __name__ == "__main__":
     main()
