@@ -518,7 +518,14 @@ def add_page_transition():
     st.markdown(css, unsafe_allow_html=True)
 
 def main():
+    def main():
     st.set_page_config(page_title="Aplikasi Kimia Interaktif", layout="wide")
+    
+    # 🌄 Tambahkan latar belakang (kalau kamu pakai)
+    set_background("assets/1000586854.png")
+    
+    # ✨ Tambahkan animasi transisi halaman
+    add_page_transition()
 
     # Navigasi di Sidebar
     st.sidebar.title("Navigasi")
