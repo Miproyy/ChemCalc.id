@@ -544,8 +544,7 @@ def main():
         }
         </style>
         <div class="watermark-fixed">
-            © 2025 POLITEKNIK AKA BOGOR - D3 Analisis Kimia
-            Kelompok 5 - 1B.
+            © 2025 POLITEKNIK AKA BOGOR - D3 Analisis Kimia - Kelompok 5 - 1B.
         </div>
         """,
         unsafe_allow_html=True
