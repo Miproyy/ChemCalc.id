@@ -502,29 +502,8 @@ def about_page():
 # APLIKASI UTAMA STREAMLIT (ROUTER)
 # =================================================================================
 
-def add_page_transition():
-    css = """
-    <style>
-    .stApp {
-        animation: fadeIn 0.7s ease-in;
-    }
-
-    @keyframes fadeIn {
-        0% { opacity: 0; transform: translateY(10px); }
-        100% { opacity: 1; transform: translateY(0); }
-    }
-    </style>
-    """
-    st.markdown(css, unsafe_allow_html=True)
-
 def main():
     st.set_page_config(page_title="Aplikasi Kimia Interaktif", layout="wide")
-    
-    # 🌄 Tambahkan latar belakang (kalau kamu pakai)
-    set_background("assets/1000586854.png")
-    
-    # ✨ Tambahkan animasi transisi halaman
-    add_page_transition()
 
     # Navigasi di Sidebar
     st.sidebar.title("Navigasi")
