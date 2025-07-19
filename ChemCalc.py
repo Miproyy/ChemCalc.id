@@ -431,13 +431,21 @@ def calculator_page():
                     data[el] = mass / ELEMENTS_DATA[el]['mass']  # mol
 
                 min_mol = min(data.values())
-                ratio = {k: round(v / min_mol + 1e-2) for k, v in data.items()}  # bulatkan mendekati bilangan bulat
+                ratio = {k: round(v / min_mol + 1e-2) for k, v in data.items()}  # dibulatkan
 
-                st.success(f"Rumus empiris adalah: *{''.join(f'{k}{v if v > 1 else ""}' for k,v in ratio.items())}*")
+                rumus = ''.join(f'{k}{v if v > 1 else ""}' for k,v in ratio.items())
+                st.success(f"Rumus empiris adalah: *{rumus}*")
+
+                with st.expander("🔍 Lihat Rincian Perhitungan"):
+                    for el in data:
+                        massa = float([p.strip().split("=")[1] for p in pairs if p.strip().startswith(el)][0])
+                        mol = data[el]
+                        st.markdown(f"- *{el}*: {massa} g ÷ {ELEMENTS_DATA[el]['mass']} g/mol = {mol:.4f} mol")
+                    st.markdown(f"- Mol terkecil = {min_mol:.4f}")
+                    st.markdown("- Rasio tiap unsur dibagi mol terkecil, lalu dibulatkan ke bilangan bulat terdekat.")
 
             except Exception as e:
                 st.error(f"Kesalahan input: {e}")
-
     with tab3:
         st.subheader("🥼 Kalkulator Konsentrasi Larutan (Molaritas)")
         massa = st.number_input("Masukkan massa zat (gram):", min_value=0.0, format="%.4f", key="massa_zat")
@@ -452,8 +460,13 @@ def calculator_page():
                 konsentrasi = mol / volume
 
                 st.success(f"Konsentrasi larutan adalah *{konsentrasi:.4f} mol/L*")
-                st.markdown(f"Jumlah mol: {mol:.4f} mol")
-                st.markdown(f"Massa molar dari {formula_konsentrasi}: {molar_mass:.4f} g/mol")
+
+                with st.expander("🔍 Lihat Rincian Perhitungan"):
+                    st.markdown(f"- Rumus zat: {formula_konsentrasi}")
+                    st.markdown(f"- Massa molar: {molar_mass:.4f} g/mol")
+                    st.markdown(f"- Jumlah mol = {massa} ÷ {molar_mass:.4f} = {mol:.4f} mol")
+                    st.markdown(f"- Konsentrasi = {mol:.4f} ÷ {volume} = **{konsentrasi:.4f} mol/L**")
+
             except Exception as e:
                 st.error(f"Kesalahan: {e}")
                 
