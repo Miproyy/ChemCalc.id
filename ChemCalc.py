@@ -350,7 +350,7 @@ def element_details_view(symbol):
 
 def display_calculation_breakdown(formula, atom_counts, total_mass):
     """Membuat expander untuk menampilkan rincian perhitungan."""
-    with st.expander("Lihat Rincian Perhitungan"):
+    with st.expander("🔍Lihat Rincian Perhitungan"):
         st.markdown(f"#### Perhitungan untuk **{formula}**")
         
         calculation_steps = []
