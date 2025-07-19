@@ -1,5 +1,29 @@
 import streamlit as st
-import re
+from base64 import b64encode
+
+def set_background():
+    with open("Organic Chemistry Education Presentation in Blue Illustrative Style.png", "rb") as f:
+        data = f.read()
+        encoded = b64encode(data).decode()
+        st.markdown(
+            f"""
+            <style>
+            .stApp {{
+                background-image: url("data:image/png;base64,{encoded}");
+                background-size: cover;
+                background-position: center;
+                background-attachment: fixed;
+            }}
+            </style>
+            """,
+            unsafe_allow_html=True
+        )
+
+set_background()
+
+st.set_page_config(page_title="ChemCalc", layout="wide")
+st.title("Selamat Datang di ChemCalc!")
+
 
 # =================================================================================
 # DATA UNSUR KIMIA
