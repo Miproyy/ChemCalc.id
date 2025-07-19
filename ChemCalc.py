@@ -1,6 +1,7 @@
 import streamlit as st
 from base64 import b64encode
 
+# Konversi gambar lokal ke base64 untuk background
 def set_background():
     with open("Organic Chemistry Education Presentation in Blue Illustrative Style.png", "rb") as f:
         data = f.read()
@@ -19,10 +20,13 @@ def set_background():
             unsafe_allow_html=True
         )
 
+# Panggil fungsi di awal sebelum UI ditampilkan
 set_background()
 
+# Contoh konten
 st.set_page_config(page_title="ChemCalc", layout="wide")
 st.title("Selamat Datang di ChemCalc!")
+
 
 
 # =================================================================================
