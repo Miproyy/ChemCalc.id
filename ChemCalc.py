@@ -502,22 +502,6 @@ def about_page():
 # APLIKASI UTAMA STREAMLIT (ROUTER)
 # =================================================================================
 
-def set_custom_background(image_url):
-    st.markdown(f"""
-        <style>
-        .stApp {{
-            background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), 
-                        url("{https://imgur.com/a/IcVQgDO}");
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-        }}
-        </style>
-        """, unsafe_allow_html=True)
-        
-image_link = "https://imgur.com/a/IcVQgDO"
-set_custom_background(https://imgur.com/a/IcVQgDO)
-
 def main():
     st.set_page_config(page_title="Aplikasi Kimia Interaktif", layout="wide")
 
