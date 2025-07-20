@@ -507,7 +507,7 @@ def set_custom_background(image_url):
         <style>
         .stApp {{
             background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), 
-                        url("{https://imgur.com/a/IcVQgDO.png}");
+                        url("{https://imgur.com/a/IcVQgDO}");
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -515,8 +515,8 @@ def set_custom_background(image_url):
         </style>
         """, unsafe_allow_html=True)
         
-image_link = "https://imgur.com/a/IcVQgDO.png"
-set_custom_background(https://imgur.com/a/IcVQgDO.png)
+image_link = "https://imgur.com/a/IcVQgDO"
+set_custom_background(https://imgur.com/a/IcVQgDO)
 
 def main():
     st.set_page_config(page_title="Aplikasi Kimia Interaktif", layout="wide")
