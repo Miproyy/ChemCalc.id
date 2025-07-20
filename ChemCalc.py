@@ -516,7 +516,7 @@ def set_custom_background(image_url):
         """, unsafe_allow_html=True)
         
 image_link = "https://imgur.com/a/IcVQgDO.png"
-set_custom_background(image_link)
+set_custom_background(https://imgur.com/a/IcVQgDO.png)
 
 def main():
     st.set_page_config(page_title="Aplikasi Kimia Interaktif", layout="wide")
