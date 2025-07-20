@@ -502,6 +502,7 @@ def about_page():
 # APLIKASI UTAMA STREAMLIT (ROUTER)
 # =================================================================================
 
+image_link = "https://imgur.com/a/IcVQgDO.png"
 def set_custom_background(image_url):
     st.markdown(f"""
         <style>
@@ -515,7 +516,6 @@ def set_custom_background(image_url):
         </style>
         """, unsafe_allow_html=True)
 
-image_link = "https://imgur.com/a/IcVQgDO"
 set_custom_background(image_link)
 
 def main():
