@@ -576,7 +576,7 @@ def set_custom_background(image_url):
         </style>
         """, unsafe_allow_html=True)
 
-image_link = "https://postimg.cc/rzjFyrWx"
+image_link = "[Organic-Chemistry-Education-Presentation-in-Blue-Illustrative-Style.png](https://postimg.cc/rzjFyrWx)"
 set_custom_background(image_link)
 
 if __name__ == "__main__":
