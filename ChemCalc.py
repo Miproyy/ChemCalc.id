@@ -576,7 +576,7 @@ def set_custom_background(image_url):
         </style>
         """, unsafe_allow_html=True)
 
-image_link = "https://drive.google.com/file/d/1AMavNlNXisujwd0LPpCR4-EH3_8cloeB/view?usp=drivesdk"
+image_link = "https://imgur.com/a/IcVQgDO"
 set_custom_background(image_link)
 
 if __name__ == "__main__":
