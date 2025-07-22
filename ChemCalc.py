@@ -573,7 +573,7 @@ st.markdown("""
     <style>
     .stApp {
         background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)),
-                    url('https://github.com/Miproyy/ChemCalc.id/blob/main/Organic%20Chemistry%20Education%20Presentation%20in%20Blue%20Illustrative%20Style.png');
+                    url('https://raw.githubusercontent.com/Miproyy/ChemCalc.id/main/Organic%20Chemistry%20Education%20Presentation%20in%20Blue%20Illustrative%20Style.png');
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
