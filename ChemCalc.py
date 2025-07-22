@@ -1,6 +1,3 @@
-# PENYESUAIAN: CSS untuk tema gelap solid dan watermark
-    import streamlit as st
-    import re
 
 st.markdown("""
     <style>
