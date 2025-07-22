@@ -565,3 +565,19 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+def set_custom_background(image_url):
+    st.markdown(f"""
+        <style>
+        .stApp {{
+            background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), 
+                        url("{image_url}");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }}
+        </style>
+        """, unsafe_allow_html=True)
+
+image_link = "https://github.com/Miproyy/ChemCalc.id/blob/main/Organic%20Chemistry%20Education%20Presentation%20in%20Blue%20Illustrative%20Style.png"
+set_custom_background(image_link)
