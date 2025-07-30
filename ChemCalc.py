@@ -569,40 +569,16 @@ if __name__ == "__main__":
 
 # PENYESUAIAN: CSS untuk tema gelap solid dan watermark
     import streamlit as st
-st.markdown("""
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+    st.markdown("""
     <style>
-    html, body, [class*="css"]  {
-        font-family: 'Poppins', sans-serif;
-        color: #222;
-    }
     .stApp {
-        background: linear-gradient(rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.92)),
+        background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)),
                     url('https://raw.githubusercontent.com/Miproyy/ChemCalc.id/main/Organic%20Chemistry%20Education%20Presentation%20in%20Blue%20Illustrative%20Style.png');
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
         background-attachment: fixed;
-    }
-    .element-cell {
-        background-color: rgba(255, 255, 255, 0.9) !important;
-        color: #222 !important;
-        border: 1px solid #ccc;
-    }
-    .element-cell:hover {
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-        transform: translateY(-2px);
-    }
-    .legend-container {
-        background-color: rgba(255, 255, 255, 0.85);
-        color: #000;
-    }
-    .legend-item {
-        color: #000;
-    }
-    .watermark-fixed {
-        background-color: #e3f2fd;
-        color: #0d47a1;
     }
     </style>
 """, unsafe_allow_html=True)
