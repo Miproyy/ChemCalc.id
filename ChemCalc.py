@@ -165,20 +165,20 @@ def calculate_molar_mass(atom_counts):
 # =================================================================================
 
 def get_category_color(category):
-    """Memberikan kode warna hex berdasarkan kategori unsur yang baru."""
     colors = {
-        'logam-alkali': '#B71C1C',
-        'alkali-tanah': '#F57F17',
-        'logam-transisi': '#1A237E',
-        'logam-pasca-transisi': '#004D40',
-        'metaloid': '#1B5E20',
-        'nonlogam-reaktif': '#33691E',
-        'gas-mulia': '#4A148C',
-        'lantanida': '#E65100',
-        'aktinida': '#BF360C',
-        'properti-tak-dikenal': '#424242'
+        'logam-alkali': '#FFCDD2',          # merah pastel
+        'alkali-tanah': '#FFF9C4',          # kuning lembut
+        'logam-transisi': '#BBDEFB',        # biru muda
+        'logam-pasca-transisi': '#C8E6C9',  # hijau pastel
+        'metaloid': '#FFE0B2',              # oranye lembut
+        'nonlogam-reaktif': '#F8BBD0',      # pink lembut
+        'gas-mulia': '#E1BEE7',             # ungu pastel
+        'lantanida': '#D7CCC8',             # coklat muda
+        'aktinida': '#B2DFDB',              # toska muda
+        'properti-tak-dikenal': '#ECEFF1'   # abu-abu terang
     }
-    return colors.get(category, '#424242')
+    return colors.get(category, '#ECEFF1')
+
 
 def periodic_table_view():
     """Menampilkan tabel periodik dengan gaya tema gelap."""
@@ -569,39 +569,51 @@ if __name__ == "__main__":
 # PENYESUAIAN: CSS untuk tema gelap solid dan watermark
     import streamlit as st
 st.markdown("""
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <style>
-    html, body, [class*="css"]  {
+    html, body, [class*="css"] {
         font-family: 'Poppins', sans-serif;
-        color: #222;
+        color: #1b1b1b;
     }
+
     .stApp {
-        background: linear-gradient(rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.92)),
+        background: linear-gradient(rgba(240, 248, 255, 0.96), rgba(240, 248, 255, 0.96)),
                     url('https://raw.githubusercontent.com/Miproyy/ChemCalc.id/main/Organic%20Chemistry%20Education%20Presentation%20in%20Blue%20Illustrative%20Style.png');
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
         background-attachment: fixed;
     }
+
+    /* Kotak Unsur */
     .element-cell {
-        background-color: rgba(255, 255, 255, 0.9) !important;
-        color: #222 !important;
-        border: 1px solid #ccc;
+        background: #ffffff !important;
+        color: #1b1b1b !important;
+        border: 1px solid #dfe6f1;
+        border-radius: 8px;
+        box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+        transition: all 0.2s ease-in-out;
     }
     .element-cell:hover {
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-        transform: translateY(-2px);
+        transform: translateY(-3px);
+        box-shadow: 0 4px 10px rgba(33, 150, 243, 0.25);
     }
+
+    /* Legend */
     .legend-container {
-        background-color: rgba(255, 255, 255, 0.85);
-        color: #000;
+        background: rgba(255, 255, 255, 0.95);
+        border: 1px solid #dfe6f1;
     }
     .legend-item {
-        color: #000;
+        color: #1b1b1b;
+        font-weight: 500;
     }
+
+    /* Watermark */
     .watermark-fixed {
-        background-color: #e3f2fd;
-        color: #0d47a1;
+        background-color: #2196f3;
+        color: white;
     }
     </style>
 """, unsafe_allow_html=True)
+
