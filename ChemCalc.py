@@ -165,19 +165,20 @@ def calculate_molar_mass(atom_counts):
 # =================================================================================
 
 def get_category_color(category):
+    """Memberikan kode warna hex berdasarkan kategori unsur yang baru."""
     colors = {
-        'logam-alkali': '#FFCDD2',          # merah pastel
-        'alkali-tanah': '#FFF9C4',          # kuning lembut
-        'logam-transisi': '#BBDEFB',        # biru muda
-        'logam-pasca-transisi': '#C8E6C9',  # hijau pastel
-        'metaloid': '#FFE0B2',              # oranye lembut
-        'nonlogam-reaktif': '#F8BBD0',      # pink lembut
-        'gas-mulia': '#E1BEE7',             # ungu pastel
-        'lantanida': '#D7CCC8',             # coklat muda
-        'aktinida': '#B2DFDB',              # toska muda
-        'properti-tak-dikenal': '#ECEFF1'   # abu-abu terang
+        'logam-alkali': '#B71C1C',
+        'alkali-tanah': '#F57F17',
+        'logam-transisi': '#1A237E',
+        'logam-pasca-transisi': '#004D40',
+        'metaloid': '#1B5E20',
+        'nonlogam-reaktif': '#33691E',
+        'gas-mulia': '#4A148C',
+        'lantanida': '#E65100',
+        'aktinida': '#BF360C',
+        'properti-tak-dikenal': '#424242'
     }
-    return colors.get(category, '#ECEFF1')
+    return colors.get(category, '#424242')
 
 
 def periodic_table_view():
