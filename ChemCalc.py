@@ -570,51 +570,39 @@ if __name__ == "__main__":
 # PENYESUAIAN: CSS untuk tema gelap solid dan watermark
     import streamlit as st
 st.markdown("""
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <style>
-    html, body, [class*="css"] {
+    html, body, [class*="css"]  {
         font-family: 'Poppins', sans-serif;
-        color: #1b1b1b;
+        color: #222;
     }
-
     .stApp {
-        background: linear-gradient(rgba(240, 248, 255, 0.96), rgba(240, 248, 255, 0.96)),
+        background: linear-gradient(rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.92)),
                     url('https://raw.githubusercontent.com/Miproyy/ChemCalc.id/main/Organic%20Chemistry%20Education%20Presentation%20in%20Blue%20Illustrative%20Style.png');
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
         background-attachment: fixed;
     }
-
-    /* Kotak Unsur */
     .element-cell {
-        background: #ffffff !important;
-        color: #1b1b1b !important;
-        border: 1px solid #dfe6f1;
-        border-radius: 8px;
-        box-shadow: 0 1px 4px rgba(0,0,0,0.05);
-        transition: all 0.2s ease-in-out;
+        background-color: rgba(255, 255, 255, 0.9) !important;
+        color: #222 !important;
+        border: 1px solid #ccc;
     }
     .element-cell:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 4px 10px rgba(33, 150, 243, 0.25);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        transform: translateY(-2px);
     }
-
-    /* Legend */
     .legend-container {
-        background: rgba(255, 255, 255, 0.95);
-        border: 1px solid #dfe6f1;
+        background-color: rgba(255, 255, 255, 0.85);
+        color: #000;
     }
     .legend-item {
-        color: #1b1b1b;
-        font-weight: 500;
+        color: #000;
     }
-
-    /* Watermark */
     .watermark-fixed {
-        background-color: #2196f3;
-        color: white;
+        background-color: #e3f2fd;
+        color: #0d47a1;
     }
     </style>
 """, unsafe_allow_html=True)
-
